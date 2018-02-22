@@ -40,6 +40,7 @@ class App extends Component {
           certificationCount: data.data.getUserCertificationsCount
         })
       })
+      .catch((error) => console.log(error, 'error in loading getData method'))
   }
 
   // When this app first appears on screen
