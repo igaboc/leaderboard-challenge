@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import _ from 'lodash'
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -12,7 +13,9 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      rankByCertification: true
+      rankByCertification: true,
+      certificationCount: [],
+      profileData: [],
     };
   }
 
@@ -27,7 +30,14 @@ class App extends Component {
     // Set State for Data loaded from api
     getData()
       .then((data) => {
-        console.log(data, 'data')
+        // Merge userCertification and userProfile together by userId
+        let merge = _.map(data.data.getUserCertificationsCount, function(item) {
+          return _.merge(item, _.find(data.data.getUserProfileBatch, { 'userId' : item.userId }));
+        });
+        this.setState({
+          profileData: data.data.getUserProfileBatch,
+          certificationCount: data.data.getUserCertificationsCount
+        })
       })
   }
 
@@ -37,7 +47,7 @@ class App extends Component {
   }
 
   render() {
-    const { rankByCertification } = this.state
+    const { rankByCertification, certificationCount, profileData } = this.state
 
     return (
       
@@ -47,6 +57,8 @@ class App extends Component {
           onFilter={this.onFilter}
           rankByCertification={rankByCertification}      
         />
+        { console.log( certificationCount, 'certification count state')}
+        { console.log( profileData, 'profile data state')}
       </div>
     );
   }
