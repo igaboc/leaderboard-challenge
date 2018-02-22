@@ -1,0 +1,30 @@
+.header {
+  background-color: #171154;
+  margin: 0;
+}
+
+.logo-title {
+  margin: auto;
+  padding: 2.5%;
+}
+
+.logo {
+  width: 50%;
+}
+
+.leaderboard {
+  color: #F4F7F9;
+  font-family: gt-walsheim-bold;
+  margin: 0;
+  font-size: 200%;
+}
+
+@media (min-width: 768px) {
+  .logo {
+    width: 30%;
+  }
+
+  .leaderboard {
+    font-size: 300%
+  }
+}

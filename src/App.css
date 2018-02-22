@@ -1,5 +1,21 @@
+@font-face {
+  font-family: 'gt-walsheim-bold';
+  src: url('./assets/gt-walsheim/gt-walsheim-bold-web.eot'); /* IE9 Compat Modes */
+  src: url('./assets/gt-walsheim/gt-walsheim-bold-web.woff') format('woff'), /* Pretty Modern Browsers */
+       url('./assets/gt-walsheim/gt-walsheim-bold-web.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('./assets/gt-walsheim/gt-walsheim-bold-web.svg') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'gt-walsheim-web';
+  src: url('./assets/gt-walsheim/gt-walsheim-web.eot'); /* IE9 Compat Modes */
+  src: url('./assets/gt-walsheim/gt-walsheim-web.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('./assets/gt-walsheim/gt-walsheim-web.svg') format('svg'); /* Legacy iOS */
+}
+
 .App {
   text-align: center;
+  background-color: #171154;
 }
 
 .App-logo {
