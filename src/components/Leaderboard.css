@@ -1,0 +1,19 @@
+tr {
+  list-style: none;
+  counter-increment: item;
+  color: #6B7C92;
+  height: 60px;
+  background-color: #F2F2F2;
+}
+tr:before {
+  margin: 20px 0 5px 20px;
+  content: counter(item);
+  color: #6B7C92;
+  width: 1.3em;
+  float: left;
+}
+
+.rounded {
+  width: 50px;
+  border-radius: 100%
+}

@@ -7,6 +7,7 @@ import { getData } from './api/sample'
 
 import Header from './components/Header'
 import SortBy from './components/SortBy'
+import Leaderboard from './components/Leaderboard'
 
 class App extends Component {
 
@@ -52,13 +53,18 @@ class App extends Component {
     return (
       
       <div className="App">
-        <Header />
-        <SortBy 
-          onFilter={this.onFilter}
-          rankByCertification={rankByCertification}      
-        />
-        { console.log( certificationCount, 'certification count state')}
-        { console.log( profileData, 'profile data state')}
+        <div className='container'>
+          <Header />
+          <SortBy 
+            onFilter={this.onFilter}
+            rankByCertification={ rankByCertification }      
+          />
+          <Leaderboard 
+            rankByCertification={ rankByCertification }
+            certificationCount={ certificationCount }
+            profileData={ profileData }
+          />
+        </div>
       </div>
     );
   }
