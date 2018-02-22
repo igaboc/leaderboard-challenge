@@ -53,5 +53,6 @@ export function getData() {
     },
   })
     .then((response) => response.json())
+    .catch((error) => console.log(error, 'fetch error'))
 
 }
