@@ -18,7 +18,7 @@ function ListData({
         return (
           // userId used as the unique key for each row, assuming that the userId is unique
           <tr key={entry.userId}>
-            {/* <td><img src={entry.picture} className='rounded' onError={(e)=>{e.target.src=`${profileImage}`}} alt='User Profile'/></td> */}
+            <td><img src={entry.picture} className='rounded' onError={(e)=>{e.target.src=`${profileImage}`}} alt='User Profile'/></td>
             <td>{entry.displayname}<br/><small>{entry.jobTitle}<br/> {entry.employer}</small></td>
             <td>{entry.count}<br/>certificates</td>
           </tr>
@@ -30,7 +30,7 @@ function ListData({
       .map((entry) => {
         return (
         <tr key={entry.userId}>
-          {/* <td><img src={entry.picture} className='rounded' onError={(e)=>{e.target.src=`${profileImage}`}} alt='User Profile'/></td> */}
+          <td><img src={entry.picture} className='rounded' onError={(e)=>{e.target.src=`${profileImage}`}} alt='User Profile'/></td>
           <td>{entry.displayname}<br/><small>{entry.jobTitle}<br/> {entry.employer}</small></td>
           <td>{entry.voteSum}<br />forum votes</td>
         </tr>
