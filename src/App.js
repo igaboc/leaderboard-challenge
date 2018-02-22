@@ -1,10 +1,29 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { getData } from './api/sample' 
 
 class App extends Component {
+
+
+
+  load() {
+
+    // Set State for Data loaded from api
+    getData()
+      .then((data) => {
+        console.log(data, 'data')
+      })
+  }
+
+  // When this app first appears on screen
+  componentDidMount() {
+    this.load()
+  }
+
   render() {
     return (
+      
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
@@ -13,6 +32,7 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+
       </div>
     );
   }
